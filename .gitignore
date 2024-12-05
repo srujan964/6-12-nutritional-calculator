@@ -23,3 +23,9 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+
+# Docker volume mount for mysql db
+mysql-data/
+
+db_password.txt
+db_root_password.txt
