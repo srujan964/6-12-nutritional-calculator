@@ -3,23 +3,26 @@
 declare(strict_types=1);
 
 use App\Controller\IngredientController;
+use App\Controller\MenuController;
 use App\MainPage;
 use App\HelloWorld;
 use App\Repository\IngredientRepository;
 use App\Repository\IngredientRepositoryImpl;
+use App\Repository\MenuRepository;
+use App\Repository\MenuRepositoryImpl;
 use Laminas\Diactoros\Response;
 
 use function DI\create;
 use function DI\get;
 
 return [
-    MainPage::class => create(MainPage::class)
-        ->constructor(get('Response')),
-    HelloWorld::class => create(HelloWorld::class)
-        ->constructor(get('Foo'), get('Response')),
     IngredientController::class => create(IngredientController::class)
         ->constructor(get('Response'), get(IngredientRepository::class)),
     IngredientRepository::class => create(IngredientRepositoryImpl::class)
+        ->constructor(get(PDO::class)),
+    MenuController::class => create(MenuController::class)
+        ->constructor(get('Response'), get(MenuRepository::class)),
+    MenuRepository::class => create(MenuRepositoryImpl::class)
         ->constructor(get(PDO::class)),
     PDO::class => function (): PDO {
         $db = "mysql:host=" . getenv("DB_HOST") . ";dbname=" . getenv("DB_NAME") . ";charset=utf8mb4";

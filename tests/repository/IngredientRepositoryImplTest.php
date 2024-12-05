@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Tests\Repositosy;
+namespace Tests\Repository;
 
 use App\Model\Ingredient;
 use App\Model\IngredientCollection;
-use PHPUnit\Framework\TestCase;
-use Mockery;
-
+use App\Repository\IngredientRepositoryImpl;
 use PDO;
 use PDOStatement;
-use App\Repository\IngredientRepositoryImpl;
+
+use PHPUnit\Framework\TestCase;
+use Mockery;
 use PHPUnit\Framework\Attributes\Test;
 
 class IngredientRepositoryImplTest extends TestCase
