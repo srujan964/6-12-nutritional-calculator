@@ -24,6 +24,8 @@
 /app/Config/database.php
 /vendors/*
 
+.phpunit.result.cache
+
 # Docker volume mount for mysql db
 mysql-data/
 

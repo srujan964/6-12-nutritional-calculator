@@ -1,1 +1,0 @@
-{"version":1,"defects":{"Tests\\Repositosy\\IngredientRepositoryImplTest::findAllShouldRunQueryToSelectAllIngredients":8},"times":{"Tests\\Repositosy\\IngredientRepositoryImplTest::findAllShouldRunQueryToSelectAllIngredients":0.013}}
