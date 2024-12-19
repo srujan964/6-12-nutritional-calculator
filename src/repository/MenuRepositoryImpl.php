@@ -59,7 +59,8 @@ class MenuRepositoryImpl implements MenuRepository
             `menu_item`.`image_url`,
             `ingredient`.`ingredient_id`, 
             `ingredient`.`name` AS `ingredient_name`, 
-            `ingredient`.`description`AS `ingredient_description`
+            `ingredient`.`description`AS `ingredient_description`,
+            `menu_item_consists_of`.`is_default` AS `ingredient_is_default`
             FROM `menu_item`
             INNER JOIN `ingredient`
             INNER JOIN `menu_item_consists_of`
@@ -87,10 +88,11 @@ class MenuRepositoryImpl implements MenuRepository
         $ingredients = new IngredientCollection();
 
         foreach ($rows as $row) {
-            $ingredient = new Ingredient(
+            $ingredient = Ingredient::withIsDefault(
                 $row['ingredient_id'],
                 $row['ingredient_name'],
-                $row['ingredient_description']
+                $row['ingredient_description'],
+                (bool) $row['ingredient_is_default']
             );
             $ingredients->add($ingredient);
         }

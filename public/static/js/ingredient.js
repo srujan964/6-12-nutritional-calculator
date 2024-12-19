@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         label.setAttribute("for", `ingredient-checkbox-${ingredient.ingredient_id}`)
 
         const ingredientCheckbox = ingredientElement.querySelector("input")
-        ingredientCheckbox.checked = ingredient.enabled_by_default ?? false
+        ingredientCheckbox.checked = ingredient.is_default ?? false
         ingredientCheckbox.name = 'ingredient_id'
         ingredientCheckbox.value = ingredient.ingredient_id
         ingredientCheckbox.id = `ingredient-checkbox-${ingredient.ingredient_id}`
