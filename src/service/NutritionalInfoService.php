@@ -28,6 +28,7 @@ class NutritionalInfoService
 
         foreach ($menuSelections as $menu_item) {
             $summary = [
+                'id' => $menu_item['id'],
                 'item_id' => $menu_item['item_id'],
                 'name' => $menu_item['name'],
                 'image_url' => $menu_item['image_url'],

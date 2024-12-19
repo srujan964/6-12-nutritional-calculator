@@ -49,6 +49,7 @@ function updateSelections(item) {
 
     let mealSelections = { selections: [] }
     const itemWithSelections = {
+        id: uid(),
         item_id: item.item_id,
         image_url: item.image_url,
         name: item.name,
@@ -66,4 +67,8 @@ function updateSelections(item) {
 
 const writeToSessionStorage = (data) => {
     sessionStorage.setItem('itemSelections', JSON.stringify(data))
+}
+
+const uid = function () {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }

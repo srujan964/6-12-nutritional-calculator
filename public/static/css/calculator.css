@@ -292,8 +292,8 @@ header h1 {
 }
 
 .ns-editor-list-element-image {
+    max-height: 240px;
     max-width: 240px;
-    height: auto;
 }
 
 .ns-editor-list-element-delete {

@@ -38,25 +38,53 @@ const populateNutritionalSummary = (data) => {
     for (const item of selections) {
         const template = document.querySelector('.tmpl-ns-editor-list-element')
         const menuItemElement = template.content.cloneNode(true)
+        const selectionId = item.id
 
-        menuItemElement.querySelector('.ns-editor-list-element-image').src = item.image_url
-        menuItemElement.querySelector('.ns-editor-list-element-details h3').textContent = item.name
-        menuItemElement.querySelector('.ns-editor-list-element-additional-info').textContent = item.total.calories + ' Cal.'
+        menuItemElement.querySelector('.ns-editor-list-element')
+            .setAttribute("id", selectionId)
 
-        document.querySelector('.nutritional-summary-editor-list-layout').append(menuItemElement)
+        menuItemElement.querySelector('.ns-editor-list-element-image')
+            .src = item.image_url
+        menuItemElement.querySelector('.ns-editor-list-element-details h3')
+            .textContent = item.name
+        menuItemElement.querySelector('.ns-editor-list-element-additional-info')
+            .textContent = item.total.calories + ' Cal.'
 
+        menuItemElement.querySelector('.ns-editor-list-element-delete')
+            .setAttribute('data-context', selectionId);
+
+        menuItemElement.querySelector('.ns-editor-list-element-delete')
+            .addEventListener('click', (e) => {
+                const idToDelete = e.target.getAttribute('data-context')
+
+                const itemSelectionString = sessionStorage.getItem('itemSelections')
+                const itemSelections = JSON.parse(itemSelectionString)
+
+                itemSelections.selections = itemSelections.selections
+                    .filter((selection) => selection.id !== idToDelete)
+
+                if (itemSelections.selections.length === 0) {
+                    sessionStorage.clear()
+                    self.location.href = '/'
+                } else {
+                    sessionStorage.setItem('itemSelections', JSON.stringify(itemSelections))
+                    location.reload()
+                }
+
+                const element = document.querySelector(`#${idToDelete}`)
+                element.parentElement.removeChild(element)
+            })
+
+        document.querySelector('.nutritional-summary-editor-list-layout')
+            .append(menuItemElement)
     }
-
 }
-
 
 document.querySelector(".ns-editor-restart")
     .addEventListener('click', async (e) => {
         sessionStorage.clear()
         self.location.href = e.target.href
     })
-
-
 
 const itemSelectionsString = sessionStorage.getItem('itemSelections')
 const itemSelections = JSON.parse(itemSelectionsString)
