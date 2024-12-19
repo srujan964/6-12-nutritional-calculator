@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     const response = await fetch(`/calculator/menu/${params.get('item_id')}/ingredients`)
     const data = await response.json()
 
+    const imageTemplate = document.querySelector(".tmpl-item-image")
+    const image = imageTemplate.content.cloneNode(true)
+
+    image.querySelector('.item-image-header').src = data.image_url
+
+    document.querySelector('div.image-placeholder').append(image)
+
     for (const ingredient of data.ingredients) {
         const template = document.querySelector(".tmpl-item-ingredient")
         const ingredientElement = template.content.cloneNode(true)

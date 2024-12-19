@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         itemButton.setAttribute("name", "item_id")
         itemButton.setAttribute("value", item.item_id)
 
+        const itemImage = itemElement.querySelector("img.image-placeholder")
+        itemImage.src = item.image_url
+
         document.querySelector(".menu-item-card-layout-list").append(itemElement)
     }
 })

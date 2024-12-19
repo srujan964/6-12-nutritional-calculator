@@ -69,6 +69,10 @@ body {
     /* Lift effect on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     /* Enhanced shadow on hover */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 /* Image Placeholder Styling */
@@ -83,6 +87,12 @@ body {
     /* Ensure images (if added later) cover the div */
     background-position: center;
     position: relative;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .image-placeholder-drinks {
