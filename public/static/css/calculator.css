@@ -230,10 +230,43 @@ header h1 {
     padding-bottom: 20px;
 }
 
+.ns-nutrition-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.ns-nutrition-table ul {
+    list-style: none;
+    display: inline-block;
+    column-count: 4;
+    column-gap: 20px;
+}
+
 .ns-element-group li {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    border-bottom: 1px dashed #cecece;
+    /* margin-bottom: 10px; */
+}
+
+.ns-element-group li:first-child {
+    margin-right: auto;
+}
+
+.ns-element-group li:last-child {
+    margin-left: auto;
+}
+
+.ns-nutrition-table-list-element .metric {
+    justify-self: flex-start;
+}
+
+.ns-nutrition-table-list-element .value {
+    justify-self: flex-end;
 }
 
 .ns-editor-list-element {
