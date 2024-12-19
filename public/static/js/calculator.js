@@ -6,6 +6,34 @@ const populateNutritionalSummary = (data) => {
     document.querySelector('#nutritional-summary-total-carbs-element').textContent = summary.carbohydrates + ' g'
     document.querySelector('#nutritional-summary-protein-element').textContent = summary.protein + ' g'
 
+    const tableTemplate = document.querySelector('.tmpl-ns-nutrition-table')
+    const nutritionTable = tableTemplate.content.cloneNode(true)
+
+    const metrics = {
+        'saturated_fats': 'Saturated Fats',
+        'trans_fats': 'Trans Fats',
+        'cholesterol': 'Cholesterol',
+        'sugars': 'Total sugars',
+        'added_sugars': 'Added sugars',
+        'vitamin_d': 'Vitamin D',
+        'calcium': 'Calcium',
+        'iron': 'Iron',
+        'potassium': 'Potassium',
+        'sodium': 'Sodium'
+    }
+
+    for (const [key, val] of Object.entries(metrics)) {
+        const tableElementTemplate = document.querySelector('.tmpl-ns-nutrition-table-list-element')
+        const tableElement = tableElementTemplate.content.cloneNode(true)
+
+        tableElement.querySelector('.metric').textContent = val
+        tableElement.querySelector('.value').textContent = summary[key]
+        nutritionTable.querySelector('.ns-nutrition-table-list-layout').append(tableElement)
+    }
+
+    document.querySelector('.nutritional-summary-fact-table').append(nutritionTable)
+
+
     const selections = data.selections
     for (const item of selections) {
         const template = document.querySelector('.tmpl-ns-editor-list-element')
@@ -17,32 +45,6 @@ const populateNutritionalSummary = (data) => {
 
         document.querySelector('.nutritional-summary-editor-list-layout').append(menuItemElement)
 
-        const tableTemplate = document.querySelector('.tmpl-ns-nutrition-table')
-        const nutritionTable = tableTemplate.content.cloneNode(true)
-
-        const metrics = {
-            'saturated_fats': 'Saturated Fats',
-            'trans_fats': 'Trans Fats',
-            'cholesterol': 'Cholesterol',
-            'sugars': 'Total sugars',
-            'added_sugars': 'Added sugars',
-            'vitamin_d': 'Vitamin D',
-            'calcium': 'Calcium',
-            'iron': 'Iron',
-            'potassium': 'Potassium',
-            'sodium': 'Sodium'
-        }
-
-        for (const [key, val] of Object.entries(metrics)) {
-            const tableElementTemplate = document.querySelector('.tmpl-ns-nutrition-table-list-element')
-            const tableElement = tableElementTemplate.content.cloneNode(true)
-
-            tableElement.querySelector('.metric').textContent = val
-            tableElement.querySelector('.value').textContent = item.total[key]
-            nutritionTable.querySelector('.ns-nutrition-table-list-layout').append(tableElement)
-        }
-
-        document.querySelector('.nutritional-summary-fact-table').append(nutritionTable)
     }
 
 }

@@ -147,6 +147,22 @@ header h1 {
     font-weight: 600;
 }
 
+.ns-editor-list-element.ingredient-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.ns-editor-list-element-details {
+    flex-grow: 1; /* Allow this to take up remaining space */
+    display: flex;
+    flex-direction: column; /* Stack the title and additional info vertically */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Left-align the content */
+}
+
 /* Change Size Section */
 .size-options {
     display: flex;
@@ -278,4 +294,12 @@ header h1 {
 .ns-editor-list-element-image {
     max-width: 240px;
     height: auto;
+}
+
+.ns-editor-list-element-delete {
+    padding: 6px 12px;
+    font-size: 14px;
+    height: auto;
+    min-height: 30px;
+    margin-left: 10px;
 }
