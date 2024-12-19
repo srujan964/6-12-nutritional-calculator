@@ -18,40 +18,47 @@ class MenuItemSeeder extends AbstractSeed
     {
         $data = [
             [
-                'name' => 'Classic Club Sandwich',
-                'category' => 'lunch',
+                'name' => 'Italian Club Sandwich',
+                'category' => 'hoagies',
                 'description' => '',
+                'image_url' => '/static/assets/hoagie.png'
             ],
             [
                 'name' => 'Philly Cheesesteak',
-                'category' => 'lunch',
-                'description' => ''
+                'category' => 'hoagies',
+                'description' => '',
+                'image_url' => '/static/assets/cheesesteak.jpeg'
             ],
             [
                 'name' => 'Veggie Sub',
-                'category' => 'lunch',
+                'category' => 'hoagies',
                 'description' => '',
-            ],
-            [
-                'name' => 'Breakfast Sandwich',
-                'category' => 'breakfast',
-                'description' => ''
+                'image_url' => '/static/assets/hoagie6.webp'
             ],
             [
                 'name' => 'Meatball Sub',
-                'category' => 'dinner',
-                'description' => ''
+                'category' => 'hoagies',
+                'description' => '',
+                'image_url' => '/static/assets/meatball-sub-small.jpg'
             ],
             [
                 'name' => 'Diet Coke',
                 'category' => 'beverages',
-                'description' => ''
+                'description' => '',
+                'image_url' => '/static/assets/cola.jpeg'
             ],
             [
-                'name' => 'Iced Tea',
+                'name' => 'Sprite',
                 'category' => 'beverages',
-                'description' => ''
-            ]
+                'description' => '',
+                'image_url' => '/static/assets/sprite.jpg'
+            ],
+            [
+                'name' => 'Fries',
+                'category' => 'sides',
+                'description' => '',
+                'image_url' => '/static/assets/sides.jpg'
+            ],
         ];
 
         $menu_item = $this->table('menu_item');

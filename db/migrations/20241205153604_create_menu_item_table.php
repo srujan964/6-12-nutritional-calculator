@@ -22,7 +22,7 @@ final class CreateMenuItemTable extends AbstractMigration
         $table = $this->table('menu_item', ['id' => 'item_id']);
 
         $table->addColumn('name', 'string')
-            ->addColumn('category', 'enum', ['values' => ['breakfast', 'lunch', 'dinner', 'beverages']])
+            ->addColumn('category', 'enum', ['values' => ['hoagies', 'sides', 'beverages']])
             ->addColumn('description', 'string')
             ->addColumn('image_url', 'text')
             ->create();

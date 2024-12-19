@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-use App\Controller\IngredientController;
-use App\Controller\MenuController;
 use FastRoute\RouteCollector;
 use Middlewares\FastRoute;
 use Middlewares\RequestHandler;
@@ -12,14 +10,19 @@ use Relay\Relay;
 use Laminas\Diactoros\ServerRequestFactory;
 use function FastRoute\simpleDispatcher;
 
+use App\Controller\IngredientController;
+
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 $container = include __DIR__ . '/../app/bootstrap.php';
 
 $routes = simpleDispatcher(
     function (RouteCollector $r) {
-        $r->get('/ingredients', IngredientController::class);
-        $r->get('/menu', MenuController::class);
+        $r->get('/', ['App\Controller\MenuController', 'show']);
+        $r->get('/calculator/menu[?{category}]', ['App\Controller\MenuController', 'fetchAllItems']);
+        $r->get('/calculator/menu/{id:\d+}/ingredients', ['App\Controller\MenuController', 'fetchById']);
+        $r->get('/calculator/ingredients', IngredientController::class);
+        $r->post('/calculator/nutritional-info', ['App\Controller\NutritionalInfoController', 'calculateSummary']);
     }
 );
 
@@ -28,12 +31,12 @@ $middlewareQueue[] = new RequestHandler($container);
 
 /**
  * @noinspection PhpUnhandledExceptionInspection
-*/
+ */
 $requestHandler = new Relay($middlewareQueue);
 $response = $requestHandler->handle(ServerRequestFactory::fromGlobals());
 
 $emitter = new SapiEmitter();
 /**
  * @noinspection PhpVoidFunctionResultUsedInspection
-*/
+ */
 return $emitter->emit($response);

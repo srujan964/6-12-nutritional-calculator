@@ -1,0 +1,162 @@
+/* General Body Styling */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ff9100;
+    /* Subtle gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap for responsiveness */
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    background: #ffffff;
+    /* White background for the menu */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+.menu-item-card-layout-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow items to wrap for responsiveness */
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    background: #ffffff;
+    /* White background for the menu */
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+.menu-item-card-layout-list li {
+    list-style-type: none;
+}
+
+/* Menu Item Styling */
+.menu-item {
+    flex: 1 1 calc(30% - 20px);
+    /* Responsive sizing for menu items */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    /* Light border for separation */
+    border-radius: 8px;
+    overflow: hidden;
+    /* Ensure the content fits within the border */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    /* Needed for button overlay */
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
+}
+
+/* Image Placeholder Styling */
+.image-placeholder {
+    width: 100%;
+    /* Make the image span the full width of the menu item */
+    height: 250px;
+    /* Set a fixed height */
+    background-color: #e0e0e0;
+    /* Placeholder color */
+    background-size: cover;
+    /* Ensure images (if added later) cover the div */
+    background-position: center;
+    position: relative;
+}
+
+.image-placeholder-drinks {
+    width: 100%;
+    /* Make the image span the full width of the menu item */
+    height: 450px;
+    /* Set a fixed height */
+    background-color: #e0e0e0;
+    /* Placeholder color */
+    background-size: cover;
+    /* Ensure images (if added later) cover the div */
+    background-position: center;
+    position: relative;
+
+}
+
+/* Button Over Image Styling */
+.menu-item button {
+    position: absolute;
+    /* Position the button over the image */
+    bottom: 10px;
+    /* Place the button near the bottom of the image */
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Adjust to center */
+    background: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white background */
+    color: #333;
+    /* Dark text color */
+    font-size: 14px;
+    font-weight: 600;
+    /* Bold text */
+    border: 1px solid #ddd;
+    /* Subtle border */
+    border-radius: 6px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-item button:hover {
+    background: rgba(240, 240, 240, 1);
+    /* Slightly darker white on hover */
+    transform: translate(-50%, -2px);
+    /* Lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Shadow on hover */
+}
+
+/* Main Menu Button */
+.main-menu button {
+    font-size: 14px;
+    font-weight: 600;
+    /* Bold text */
+    border: 1px solid #ddd;
+    /* Subtle border */
+    border-radius: 6px;
+    /* Rounded corners */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: static;
+    /* Default position for main menu button */
+    margin-top: 10px;
+    /* Add spacing above */
+    background: #ff9100;
+    color: white;
+    width: 100%;
+    /* Full width of the menu item */
+    justify-content: center
+}
+
+.main-menu button:hover {
+    background: #b34e00;
+}

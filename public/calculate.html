@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6-12 Nutritional Calculator</title>
+    <link rel="stylesheet" href="/static/css/calculator.css" />
+    <script type="module" src="/static/js/calculator.js"></script>
+</head>
+
+
+<body>
+    <div>
+        <div class="nutritional-summary container">
+            <h1>Nutritional Calculator</h1>
+            <div class="nutrional-summary-top-info nutrition-section">
+                <ul class="nutritional-summary-main-list nutrition-facts">
+                    <div class="ns-element-group">
+                        <li>
+                            <span id="nutritional-summary-calorie-element-label"
+                                class="nutritional-summary-main-list-element-label">
+                                Calories
+                            </span>
+                            <span id="nutritional-summary-calorie-element" class="nutrional-summary-main-list-element">
+                            </span>
+                            <span id="nutritional-summary-calorie-metric" class="nutrional-summary-main-list-element">
+                            </span>
+                        </li>
+                    </div>
+
+                    <div class="ns-element-group">
+                        <li> <span id="nutritional-summary-total-fat-element-label"
+                                class="nutritional-summary-main-list-element-label">
+                                Total Fats
+                            </span>
+                            <span id="nutritional-summary-total-fat-element"
+                                class="nutrional-summary-main-list-element">
+                            </span>
+                            <span id="nutritional-summary-total-fat-metric" class="nutrional-summary-main-list-element">
+                            </span>
+                        </li>
+                    </div>
+
+                    <div class="ns-element-group">
+                        <li> <span id="nutritional-summary-total-carbs-element-label"
+                                class="nutritional-summary-main-list-element-label">
+                                Total Carbs
+                            </span>
+                            <span id="nutritional-summary-total-carbs-element"
+                                class="nutrional-summary-main-list-element">
+                            </span>
+                            <span id="nutritional-summary-total-carbs-metric"
+                                class="nutrional-summary-main-list-element">
+                            </span>
+                        </li>
+                    </div>
+
+                    <div class="ns-element-group">
+                        <li> <span id="nutritional-summary-protein-element-label"
+                                class="nutritional-summary-main-list-element-label">
+                                Protein
+                            </span>
+                            <span id="nutritional-summary-protein-element" class="nutrional-summary-main-list-element">
+                            </span>
+                            <span id="nutritional-summary-protein-metric" class="nutrional-summary-main-list-element">
+                            </span>
+                        </li>
+                    </div>
+
+                </ul>
+            </div>
+            <div class="nutritional-summary-editor" id="ingredients-section">
+                <div class="nutritional-summary-editor__header">
+                    <h2>Showing nutrition for selected items:</h2>
+                </div>
+                <div class="nutritional-summary-editor_list">
+                    <ol class="nutritional-summary-editor-list-layout">
+                    </ol>
+                </div>
+            </div>
+            <template class="tmpl-ns-nutrition-table">
+                <div class="ns-nutrition-table">
+                    <ul class="ns-nutrition-table-list-layout">
+                    </ul>
+                </div>
+            </template>
+            <template class="tmpl-ns-nutrition-table-list-element">
+                <li class="ns-nutrition-table-list-element">
+                    <span class="metric"></span>
+                    <span class="value"></span>
+                </li>
+            </template>
+            <template class="tmpl-ns-editor-list-element">
+                <div class="ns-editor-list-element ingredient-item">
+                    <img class="ns-editor-list-element-image">
+                    <div class="ns-editor-list-element-details">
+                        <h3 class="ns-editor-list-element-title"></h3>
+                        <p class="ns-editor-list-element-additional-info"></p>
+                    </div>
+                    <!-- <div class="ns-editor-list-element-size-select">
+                        <select name="size-choice">
+                        </select>
+                    </div> -->
+                    <div class="action-buttons">
+                        <button class="ns-editor-list-element-delete" type="button">Remove</button>
+                    </div>
+                </div>
+            </template>
+            <template class="tmpl-item-size-choice">
+                <option>Regular</option>
+            </template>
+            <div class="action-buttons">
+                <a href="/" class="ns-editor-back">
+                    <button action="/">Back to Menu</button>
+                </a>
+                <a href="/" class="ns-editor-restart">
+                    <button action="/">Restart</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

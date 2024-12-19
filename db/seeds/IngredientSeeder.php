@@ -18,19 +18,52 @@ class IngredientSeeder extends AbstractSeed
     {
         $data = [
             [
-                'name' => 'English Muffin',
-                'category' => 'Breakfast',
-                'description' => 'Contains Wheat, Sesame.'
+                'name' => 'Baguette',
+                'description' => 'Contains Wheat, Yeast, Sesame.'
             ],
             [
-                'name' => 'Egg',
-                'category' => 'Breakfast',
-                'description' => 'USDA Grade A Eggs.'
+                'name' => 'Sliced Ham',
+                'description' => ''
             ],
             [
-                'name' => 'Salted Butter',
-                'category' => 'Breakfast',
-                'description' => 'Contains Dairy.'
+                'name' => 'Salami',
+                'description' => ''
+            ],
+            [
+                'name' => 'Mortadella',
+                'description' => ''
+            ],
+            [
+                'name' => 'Sliced Tomatoes',
+                'description' => ''
+            ],
+            [
+                'name' => 'Provolone Cheese',
+                'description' => ''
+            ],
+            [
+                'name' => 'Iceberg Lettuce',
+                'description' => ''
+            ],
+            [
+                'name' => 'Salt and Pepper',
+                'description' => ''
+            ],
+            [
+                'name' => 'French Fries',
+                'description' => ''
+            ],
+            [
+                'name' => 'Sprite',
+                'description' => ''
+            ],
+            [
+                'name' => 'Coke',
+                'description' => ''
+            ],
+            [
+                'name' => 'Ice Cubes',
+                'description' => ''
             ]
         ];
 

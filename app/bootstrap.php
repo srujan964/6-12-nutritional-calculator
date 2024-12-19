@@ -10,7 +10,9 @@ $containerBuilder->useAutowiring(false);
 $containerBuilder->useAttributes(false);
 $containerBuilder->addDefinitions(__DIR__ . "/config.php");
 
-/** @noinspection PhpUnhandledExceptionInspection */
+/**
+ * @noinspection PhpUnhandledExceptionInspection 
+*/
 $container = $containerBuilder->build();
 
 return $container;

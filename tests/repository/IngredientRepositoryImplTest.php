@@ -25,19 +25,18 @@ class IngredientRepositoryImplTest extends TestCase
         $mockPDOStatement = Mockery::mock(PDOStatement::class);
 
         $mockDB->shouldReceive('query')
-            ->with("SELECT `ingredient_id`, `name`, `category`, `description` FROM `ingredient`")
+            ->with("SELECT `ingredient_id`, `name`, `description` FROM `ingredient`")
             ->andReturn($mockPDOStatement);
 
         $dbRow = [
             [
                 'ingredient_id' => 1,
                 'name' => 'English Muffin',
-                'category' => 'Breakfast',
                 'description' => 'Contains yeast, gluten.'
             ]
         ];
 
-        $expectedIngredient = new Ingredient(1, 'English Muffin', 'Breakfast', 'Contains yeast, gluten.');
+        $expectedIngredient = new Ingredient(1, 'English Muffin', 'Contains yeast, gluten.');
         $expected = new IngredientCollection(array($expectedIngredient));
 
 

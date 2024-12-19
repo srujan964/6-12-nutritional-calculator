@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoagies Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/menu.css">
+    <script type="module" src="/static/js/menu.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="menu-item-card-layout-list">
+        </ul>
+        <div class="main-menu button">
+            <a href="/">
+                <button type="submit">Back to Main Menu</button>
+            </a>
+        </div>
+        <template class="tmpl-menu-item-element">
+            <li>
+                <div class="menu-item">
+                    <div class="image-placeholder">
+                        <img src="/static/assets/hoagie4.webp" class="image-placeholder" />
+                    </div>
+                    <form action="ingredients.html" method="GET">
+                        <button type="submit">Bacon Crispy Hoagie</button>
+                    </form>
+                </div>
+            </li>
+        </template>
+    </div>
+</body>
+
+</html>

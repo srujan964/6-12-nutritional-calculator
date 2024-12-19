@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Phinx\Migration\AbstractMigration;
 
-final class AlterCategoryForIngredient extends AbstractMigration
+final class CreateMenuItemConsistsOfTable extends AbstractMigration
 {
     /**
      * Change Method.
@@ -19,9 +19,10 @@ final class AlterCategoryForIngredient extends AbstractMigration
      */
     public function change(): void
     {
-        $ingredient = $this->table('ingredient');
+        $table = $this->table('menu_item_consists_of', ['id' => false, 'primary_key' => ['item_id', 'ingredient_id']]);
 
-        $ingredient->changeColumn('category', 'enum', ['values' => ['breakfast', 'lunch', 'dinner', 'beverages']])
-            ->save();
+        $table->addColumn('item_id', 'integer', ['null' => false])
+            ->addColumn('ingredient_id', 'integer', ['null' => false])
+            ->create();
     }
 }

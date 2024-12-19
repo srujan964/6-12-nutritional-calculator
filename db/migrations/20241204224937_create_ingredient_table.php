@@ -22,7 +22,6 @@ final class CreateIngredientTable extends AbstractMigration
         $table = $this->table('ingredient', ['id' => 'ingredient_id']);
 
         $table->addColumn('name', 'string')
-            ->addColumn('category', 'string')
             ->addColumn('description', 'text')
             ->create();
     }

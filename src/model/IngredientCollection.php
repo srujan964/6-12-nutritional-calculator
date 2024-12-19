@@ -13,6 +13,7 @@ class IngredientCollection implements JsonSerializable
 
     public function __construct(array $items = [])
     {
+        $this->items = array();
         foreach ($items as $item) {
             $this->add($item);
         }

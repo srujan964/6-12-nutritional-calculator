@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add or Remove Ingredients</title>
+    <link rel="stylesheet" href="/static/css/ingredient.css">
+    <script type="module" src="/static/js/ingredient.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add or Remove Ingredients</h1>
+        <div class="image-placeholder">
+            <!-- Placeholder for image or design -->
+        </div>
+        <div class="checkbox-group item-ingredients-selection-group">
+        </div>
+        <div class="navigation">
+            <a href="/">
+                <button type="button">Main Menu</button>
+            </a>
+            <a href="/calculate.html" class="item-ingredient-selections-submit">
+                <button type="button">Next</button>
+            </a>
+        </div>
+    </div>
+    <template class="tmpl-item-ingredient">
+        <input type="checkbox" />
+        <label>Default</label>
+    </template>
+</body>
+
+</html>

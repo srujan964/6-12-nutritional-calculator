@@ -10,14 +10,12 @@ class Ingredient implements JsonSerializable
 {
     private int $ingredient_id;
     private string $name;
-    private string $category;
     private string $description;
 
-    public function __construct(int $id, string $name, string $category, string $description)
+    public function __construct(int $id, string $name, string $description)
     {
         $this->ingredient_id = $id;
         $this->name = $name;
-        $this->category = $category;
         $this->description = $description;
     }
 
@@ -26,10 +24,6 @@ class Ingredient implements JsonSerializable
         return $this->name;
     }
 
-    public function category(): string
-    {
-        return $this->category;
-    }
 
     public function describe(): string
     {
@@ -42,7 +36,6 @@ class Ingredient implements JsonSerializable
         return [
             'ingredient_id' => $this->ingredient_id,
             'name' => $this->name,
-            'category' => $this->category,
             'description' => $this->description,
         ];
     }

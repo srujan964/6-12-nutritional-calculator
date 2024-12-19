@@ -19,7 +19,7 @@ class IngredientRepositoryImpl implements IngredientRepository
 
     public function findAll(): IngredientCollection
     {
-        $results = $this->db->query("SELECT `ingredient_id`, `name`, `category`, `description` FROM `ingredient`")
+        $results = $this->db->query("SELECT `ingredient_id`, `name`, `description` FROM `ingredient`")
             ->fetchAll();
         $ingredients = new IngredientCollection();
         foreach ($results as $result) {
@@ -35,7 +35,6 @@ class IngredientRepositoryImpl implements IngredientRepository
         return new Ingredient(
             $row['ingredient_id'],
             $row['name'],
-            $row['category'],
             $row['description'],
         );
     }

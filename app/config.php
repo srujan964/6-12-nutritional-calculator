@@ -4,12 +4,14 @@ declare(strict_types=1);
 
 use App\Controller\IngredientController;
 use App\Controller\MenuController;
-use App\MainPage;
-use App\HelloWorld;
+use App\Controller\NutritionalInfoController;
 use App\Repository\IngredientRepository;
 use App\Repository\IngredientRepositoryImpl;
 use App\Repository\MenuRepository;
 use App\Repository\MenuRepositoryImpl;
+use App\Repository\NutritionalInfoRepository;
+use App\Repository\NutritionalInfoRepositoryImpl;
+use App\Service\NutritionalInfoService;
 use Laminas\Diactoros\Response;
 
 use function DI\create;
@@ -23,6 +25,12 @@ return [
     MenuController::class => create(MenuController::class)
         ->constructor(get('Response'), get(MenuRepository::class)),
     MenuRepository::class => create(MenuRepositoryImpl::class)
+        ->constructor(get(PDO::class)),
+    NutritionalInfoController::class => create(NutritionalInfoController::class)
+        ->constructor(get('Response'), get(NutritionalInfoService::class)),
+    NutritionalInfoService::class => create(NutritionalInfoService::class)
+        ->constructor(get(NutritionalInfoRepository::class)),
+    NutritionalInfoRepository::class => create(NutritionalInfoRepositoryImpl::class)
         ->constructor(get(PDO::class)),
     PDO::class => function (): PDO {
         $db = "mysql:host=" . getenv("DB_HOST") . ";dbname=" . getenv("DB_NAME") . ";charset=utf8mb4";
