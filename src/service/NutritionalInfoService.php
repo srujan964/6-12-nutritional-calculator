@@ -71,6 +71,7 @@ class NutritionalInfoService
                         //exclude sodium from calorie count
                         if ($key !== 'sodium') {
                             $summary['total'][$key] += $value * $multiplier;
+                        }
                     }
                 }
             }
