@@ -71,3 +71,51 @@ body {
 .navigation button:hover {
     background-color: #0056b3;
 }
+
+.size-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.size-selector-group {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 15px; /* Space between radio buttons */
+}
+
+.size-selector label {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.size-selector input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Style when radio button is checked */
+.size-selector input[type="radio"]:checked + label {
+    color: #007bff;
+    font-weight: 700;
+}
+
+/* Style when radio button is hovered */
+.size-selector label:hover {
+    color: #007bff;
+}
+
+.size-selector input[type="radio"]:focus-visible {
+    outline: 3px solid #ffcc00; /* Adds outline for better accessibility */
+}

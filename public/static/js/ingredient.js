@@ -5,10 +5,31 @@ document.addEventListener('DOMContentLoaded', async () => {
     const response = await fetch(`/calculator/menu/${params.get('item_id')}/ingredients?location=${store}`)
     const data = await response.json()
 
+    const category = data.category
+
     const imageTemplate = document.querySelector(".tmpl-item-image")
     const image = imageTemplate.content.cloneNode(true)
 
     image.querySelector('.item-image-header').src = data.image_url
+
+    const sizes = {
+        'hoagies': ['6 inch', '12 inch'],
+        'sides': ['Regular', 'Large'],
+        'beverages': ['Regular', 'Large']
+    }
+
+    sizes[category].forEach((size) => {
+        const template = document.querySelector('.tmpl-size-selectors')
+        const clone = template.content.cloneNode(true)
+
+        clone.querySelector('.size-selector-radio').id = size
+        clone.querySelector('.size-selector-radio').value = size
+        clone.querySelector('.size-selector-radio').name = 'size'
+
+        clone.querySelector('.size-selector-radio-label').for = size
+        clone.querySelector('.size-selector-radio-label').textContent = size
+        document.querySelector('.size-selector-fieldset').append(clone)
+    })
 
     document.querySelector('div.image-placeholder').append(image)
 
@@ -48,12 +69,16 @@ function updateSelections(item) {
             }
         })
 
+    const selectedRadio = document.querySelector('input[name="size"]:checked')
+    const size = selectedRadio.value
+
     let mealSelections = { selections: [] }
     const itemWithSelections = {
         id: uid(),
         item_id: item.item_id,
         image_url: item.image_url,
         name: item.name,
+        size: size,
         ingredient_selections: selections
     }
     mealSelections.selections.push(itemWithSelections)

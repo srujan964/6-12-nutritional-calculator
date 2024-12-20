@@ -46,7 +46,7 @@ const populateNutritionalSummary = (data) => {
         menuItemElement.querySelector('.ns-editor-list-element-image')
             .src = item.image_url
         menuItemElement.querySelector('.ns-editor-list-element-details h3')
-            .textContent = item.name
+            .textContent = item.size + ' ' + item.name
         menuItemElement.querySelector('.ns-editor-list-element-additional-info')
             .textContent = item.total.calories + ' Cal.'
 

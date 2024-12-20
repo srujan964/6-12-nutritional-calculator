@@ -26,11 +26,21 @@ class NutritionalInfoService
 
         $nutritional_summary = [];
 
+        $sizes = [
+            '6 inch' => 1.0,
+            '12 inch' => 2.0,
+            'Regular' => 1.0,
+            'Large' => 1.5
+        ];
+
+        $multiplier = $sizes[$item['size']];
+
         foreach ($menuSelections as $menu_item) {
             $summary = [
                 'id' => $menu_item['id'],
                 'item_id' => $menu_item['item_id'],
                 'name' => $menu_item['name'],
+                'size' => $menu_item['size'],
                 'image_url' => $menu_item['image_url'],
                 'total' => [
                     'calories' => 0,
@@ -56,7 +66,7 @@ class NutritionalInfoService
 
                     // Add the nutritional values of the selected ingredient to the summary
                     foreach ($results[$ingredient_id] as $key => $value) {
-                        $summary['total'][$key] += $value;
+                        $summary['total'][$key] += $value * $multiplier;
                     }
                 }
             }
