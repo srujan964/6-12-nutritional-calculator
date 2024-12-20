@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search)
+    const store = sessionStorage.getItem('store')
 
-    const response = await fetch(`/calculator/menu/${params.get('item_id')}/ingredients`)
+    const response = await fetch(`/calculator/menu/${params.get('item_id')}/ingredients?location=${store}`)
     const data = await response.json()
 
     const imageTemplate = document.querySelector(".tmpl-item-image")

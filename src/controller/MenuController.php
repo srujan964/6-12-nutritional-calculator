@@ -36,19 +36,20 @@ class MenuController
         return $response;
     }
 
-    public function fetchByCategory(ServerRequest $request)
-    {
-        $response = $this->response->withHeader('Content-Type', 'application/json');
-        echo implode(',', $request->getQueryParams());
-    }
-
     public function fetchById(ServerRequest $request)
     {
         $response = $this->response->withHeader('Content-Type', 'application/json');
         $path = explode('/', trim($request->getUri()->getPath(), '/'));
         $id = array_reverse($path)[1];
 
-        $menu_item = $this->menuRepository->findByIdWithIngredients((int) $id);
+        $params = $request->getQueryParams();
+        if ($params) {
+            $location = $params['location'];
+        } else {
+            $location = 'PA';
+        }
+
+        $menu_item = $this->menuRepository->findByIdWithIngredients((int) $id, $location);
 
         if (!$menu_item) {
             return $response->withStatus(404);

@@ -20,7 +20,7 @@ $routes = simpleDispatcher(
     function (RouteCollector $r) {
         $r->get('/', ['App\Controller\MenuController', 'show']);
         $r->get('/calculator/menu[?{category}]', ['App\Controller\MenuController', 'fetchAllItems']);
-        $r->get('/calculator/menu/{id:\d+}/ingredients', ['App\Controller\MenuController', 'fetchById']);
+        $r->get('/calculator/menu/{id:\d+}/ingredients[?{location}]', ['App\Controller\MenuController', 'fetchById']);
         $r->get('/calculator/ingredients', IngredientController::class);
         $r->post('/calculator/nutritional-info', ['App\Controller\NutritionalInfoController', 'calculateSummary']);
     }

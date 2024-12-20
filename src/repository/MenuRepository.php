@@ -13,5 +13,5 @@ interface MenuRepository
 
     public function findByCategory(string $category): MenuItemCollection;
 
-    public function findByIdWithIngredients(int $id): MenuItem;
+    public function findByIdWithIngredients(int $id, string $location): MenuItem;
 }

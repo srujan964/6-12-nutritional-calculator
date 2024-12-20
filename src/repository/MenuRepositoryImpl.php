@@ -49,7 +49,7 @@ class MenuRepositoryImpl implements MenuRepository
         return $menu_items;
     }
 
-    public function findByIdWithIngredients(int $id): MenuItem
+    public function findByIdWithIngredients(int $id, string $location): MenuItem
     {
         $sql = <<<SQL
             SELECT `menu_item`.`item_id`, 
@@ -66,12 +66,13 @@ class MenuRepositoryImpl implements MenuRepository
             INNER JOIN `menu_item_consists_of`
             ON `menu_item`.`item_id` = `menu_item_consists_of`.`item_id`
             AND `ingredient`.`ingredient_id` = `menu_item_consists_of`.`ingredient_id`
-            WHERE `menu_item`.`item_id` = :item_id;
+            WHERE `menu_item`.`item_id` = :item_id
+            AND `menu_item_consists_of`.`location` = :location;
         SQL;
 
 
         $select = $this->db->prepare($sql);
-        $select->execute(['item_id' => $id]);
+        $select->execute(['item_id' => $id, 'location' => $location]);
         $results = $select->fetchAll(PDO::FETCH_ASSOC);
 
         return $this->mapToMenuItemWithIngredients($results);

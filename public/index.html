@@ -12,6 +12,12 @@
 <body>
     <div class="container" id="app">
         <div class="left-section">
+            <label for="store-select" class="store-selector-label">Store Location:</label>
+            <select id="store-select">
+                <option value="PA" >Philadelphia, PA</option>
+                <option value="PA">Pittsburgh, PA</option>
+                <option value="FL">Orlando, FL</option>
+            </select>
             <h2>Select Category</h2>
             <div class="category">
                 <div class="category-card">
@@ -42,16 +48,13 @@
         </div>
         <div class="right-section">
             <h2>6-12 Nutritional Calculator</h2>
-            <div class="large"></div>
+            <div class="large">
+                <img src="/static/assets/healthy-sandwich.jpg">
+            </div>
             <div class="text-scroll">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
-                    gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
-                    Sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
-                    gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
+                <p>
+                    Find six-twelve's calorie, carb, and more nutritional information on your favourite meals!
                 </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin
-                    gravida dolor sit amet lacus accumsan et viverra justo commodo.</p>
             </div>
             <div class="buttons">
                 <button>About Us</button>
@@ -74,81 +77,6 @@
                     </ul>
                 </div>
             </div>
-        </template>
-        <template class="template-nutritional-label-summary">
-            <div class="nutritional-label-summary-container">
-                <div class="nutritional-label-summary-header">
-                    <h1>
-                        <span class="nutritional-label-summary-header-text">
-                            Nutritional Calculator
-                        </span>
-                    </h1>
-                    <p>
-                        <span class="nutritional-label-summary-header-text">
-                            Find 6-12's calorie, carb, and nutrition information on your favourite meals.
-                        </span>
-                    </p>
-                </div>
-                <div class="nutritional-summary">
-                    <div class="nutrional-summary-top-info">
-                        <ul class="nutritional-summary-main-list">
-                            <li id="nutritional-summary-calorie-element" class="nutrional-summary-main-list-element">
-                            </li>
-                            <li id="nutritional-summary-calorie-metric" class="nutrional-summary-main-list-element">
-                            </li>
-                            <li id="nutritional-summary-total-fat-element" class="nutrional-summary-main-list-element">
-                            </li>
-                            <li id="nutritional-summary-total-fat-metric" class="nutrional-summary-main-list-element">
-                            </li>
-                            <li id="nutritional-summary-total-carbs-element"
-                                class="nutrional-summary-main-list-element">
-                            </li>
-                            <li id="nutritional-summary-total-carbs-metric" class="nutrional-summary-main-list-element">
-                            </li>
-                            <li id="nutritional-summary-protein-element" class="nutrional-summary-main-list-element">
-                            </li>
-                            <li id="nutritional-summary-protein-metric" class="nutrional-summary-main-list-element">
-                            </li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        </template>
-        <template class="template-nutritional-summary-table">
-            <div class="nutritional-summary-table">
-                <ul class="nutritional-summary-table-list">
-                    <li id="nutritional-summary-table-elem" class="nutritional-summary-table-element"></li>
-                    <li id="nutritional-summary-table-sat-fats" class="nutritional-summary-table-element"></li>
-                    <li id="nutritional-summary-table-trans-fats" class="nutritional-summary-table-element">
-                    </li>
-                    <li id="nutritional-summary-table-cholesterol" class="nutritional-summary-table-element">
-                    </li>
-                    <li id="nutritional-summary-table-dietary-fiber" class="nutritional-summary-table-element">
-                    </li>
-                    <li id="nutritional-summary-table-total-sugars" class="nutritional-summary-table-element">
-                    </li>
-                    <li id="nutritional-summary-table-added-sugars" class="nutritional-summary-table-element">
-                    </li>
-                    <li id="nutritional-summary-table-vit-d" class="nutritional-summary-table-element"></li>
-                    <li id="nutritional-summary-table-calcium" class="nutritional-summary-table-element"></li>
-                    <li id="nutritional-summary-table-iron" class="nutritional-summary-table-element"></li>
-                    <li id="nutritional-summary-table-potassium" class="nutritional-summary-table-element"></li>
-                    <li id="nutritional-summary-table-sodium" class="nutritional-summary-table-element"></li>
-                </ul>
-            </div>
-        </template>
-        <template class="template-menu-item-card">
-            <li class="menu-item-card">
-                <button class="menu-item-card-button">
-                    <picture>
-                        <img>
-                    </picture>
-                    <span class="menu-item-card-title">
-                        <span class="item-name">Default name</span>
-                    </span>
-                </button>
-            </li>
         </template>
     </div>
 </body>

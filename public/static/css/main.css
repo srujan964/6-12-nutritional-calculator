@@ -6,8 +6,10 @@ Page: Menu Dashboard
 
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    font-size: 16px; /* Base font size */
-    line-height: 1.6; /* Improve readability */
+    font-size: 16px;
+    /* Base font size */
+    line-height: 1.6;
+    /* Improve readability */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,31 +17,43 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f17910 
+    background-color: #f17910
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600; /* Make headings bold */
-    color: #222; /* Darker color for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    /* Make headings bold */
+    color: #222;
+    /* Darker color for headings */
     margin-bottom: 20px;
 }
 
 h1 {
-    font-size: 2.5rem; /* Extra large for main heading */
+    font-size: 2.5rem;
+    /* Extra large for main heading */
 }
 
 h2 {
-    font-size: 2rem; /* Large size for subheadings */
+    font-size: 2rem;
+    /* Large size for subheadings */
 }
 
 h3 {
-    font-size: 1.75rem; /* Medium size for smaller headings */
+    font-size: 1.75rem;
+    /* Medium size for smaller headings */
 }
 
 p {
-    font-size: 1rem; /* Standard paragraph size */
+    font-size: 1rem;
+    /* Standard paragraph size */
     margin-bottom: 15px;
-    color: #555; /* Slightly lighter gray for paragraphs */
+    color: #555;
+    /* Slightly lighter gray for paragraphs */
 }
 
 .container {
@@ -89,19 +103,28 @@ p {
 
 
 .image-placeholder {
-    width: 250px; /* Set a consistent width */
-    height: 150px; /* Set a consistent height */
+    width: 250px;
+    /* Set a consistent width */
+    height: 150px;
+    /* Set a consistent height */
     border: 1px solid #ccc;
-    border-radius: 8px; /* Optional: Rounded corners */
-    overflow: hidden; /* Prevent images from spilling outside the container */
-    background-color: #f0f0f0; /* Placeholder color when image is loading */
+    border-radius: 8px;
+    /* Optional: Rounded corners */
+    overflow: hidden;
+    /* Prevent images from spilling outside the container */
+    background-color: #f0f0f0;
+    /* Placeholder color when image is loading */
 }
 
 .image-placeholder img {
-    width: 100%; /* Fill the container horizontally */
-    height: 100%; /* Fill the container vertically */
-    object-fit: cover; /* Ensures the image scales proportionally */
-    object-position: center; /* Centers the image */
+    width: 100%;
+    /* Fill the container horizontally */
+    height: 100%;
+    /* Fill the container vertically */
+    object-fit: cover;
+    /* Ensures the image scales proportionally */
+    object-position: center;
+    /* Centers the image */
 }
 
 /* .image-placeholder {
@@ -113,20 +136,31 @@ p {
 } */
 
 .large {
-    width: 100%; /* Make the container take full width */
-    max-width: 300px; /* Set a max width to prevent it from being too large */
-    height: 200px; /* Set a fixed height */
-    margin: 0 auto; /* Center the container horizontally */
-    border: 1px solid #ccc; /* Optional: Add a border for clarity */
-    border-radius: 8px; /* Optional: Rounded corners */
-    overflow: hidden; /* Prevent the image from spilling out */
+    width: 100%;
+    /* Make the container take full width */
+    max-width: 300px;
+    /* Set a max width to prevent it from being too large */
+    height: 200px;
+    /* Set a fixed height */
+    margin: 0 auto;
+    /* Center the container horizontally */
+    border: 1px solid #ccc;
+    /* Optional: Add a border for clarity */
+    border-radius: 8px;
+    /* Optional: Rounded corners */
+    overflow: hidden;
+    /* Prevent the image from spilling out */
 }
 
 .large img {
-    width: 100%; /* Scale the image to match the container width */
-    height: 100%; /* Scale the image to match the container height */
-    object-fit: cover; /* Ensures the image scales proportionally and fills the container */
-    object-position: center; /* Center the image within the container */
+    width: 100%;
+    /* Scale the image to match the container width */
+    height: 100%;
+    /* Scale the image to match the container height */
+    object-fit: cover;
+    /* Ensures the image scales proportionally and fills the container */
+    object-position: center;
+    /* Center the image within the container */
 }
 
 .category-card a strong {
@@ -135,25 +169,40 @@ p {
 
 
 button {
-    padding: 12px 25px; /* Slightly larger padding for better clickability */
-    background: #ff8c00; /* Vibrant orange background */
-    color: white; /* White text for contrast */
-    border: none; /* Remove default border */
-    border-radius: 6px; /* Smooth, rounded corners */
+    padding: 12px 25px;
+    /* Slightly larger padding for better clickability */
+    background: #ff8c00;
+    /* Vibrant orange background */
+    color: white;
+    /* White text for contrast */
+    border: none;
+    /* Remove default border */
+    border-radius: 6px;
+    /* Smooth, rounded corners */
     cursor: pointer;
-    font-family: 'Poppins', Arial, sans-serif; /* Clean, modern font */
-    font-size: 14px; /* Standard font size */
-    font-weight: 600; /* Bold text for better readability */
-    text-transform: uppercase; /* Optional: Capitalize all letters */
-    letter-spacing: 0.5px; /* Slight spacing between letters */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: all 0.3s ease; /* Smooth animation for hover effects */
+    font-family: 'Poppins', Arial, sans-serif;
+    /* Clean, modern font */
+    font-size: 14px;
+    /* Standard font size */
+    font-weight: 600;
+    /* Bold text for better readability */
+    text-transform: uppercase;
+    /* Optional: Capitalize all letters */
+    letter-spacing: 0.5px;
+    /* Slight spacing between letters */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    transition: all 0.3s ease;
+    /* Smooth animation for hover effects */
 }
 
 button:hover {
-    background: #e57200; /* Slightly darker orange on hover */
-    transform: translateY(-2px); /* Slight lift effect */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    background: #e57200;
+    /* Slightly darker orange on hover */
+    transform: translateY(-2px);
+    /* Slight lift effect */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
 }
 
 .text-scroll {
@@ -181,22 +230,29 @@ button:hover {
 
 /* Social Section */
 .social {
-    background-color: #f1f1f1; /* Light gray background for the social section */
-    padding: 20px 0; /* Add vertical spacing */
+    background-color: #f1f1f1;
+    /* Light gray background for the social section */
+    padding: 20px 0;
+    /* Add vertical spacing */
 }
 
 .social .container {
     display: flex;
-    justify-content: center; /* Center the icons horizontally */
-    align-items: center; /* Align icons vertically */
+    justify-content: center;
+    /* Center the icons horizontally */
+    align-items: center;
+    /* Align icons vertically */
 }
 
 .social ul {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
+    /* Remove bullet points */
     padding: 0;
     margin: 0;
-    display: flex; /* Align items horizontally */
-    gap: 20px; /* Space between icons */
+    display: flex;
+    /* Align items horizontally */
+    gap: 20px;
+    /* Space between icons */
 }
 
 .social ul li {
@@ -204,30 +260,40 @@ button:hover {
 }
 
 .social ul li a img {
-    width: 50px; /* Ensure uniform icon size */
+    width: 50px;
+    /* Ensure uniform icon size */
     height: 50px;
-    transition: transform 0.3s ease; /* Smooth hover effect */
+    transition: transform 0.3s ease;
+    /* Smooth hover effect */
 }
 
 .social ul li a img:hover {
-    transform: scale(1.1); /* Slight zoom-in on hover */
+    transform: scale(1.1);
+    /* Slight zoom-in on hover */
 }
 
 /* Footer Section */
 .footer {
-    background-color: #222; /* Dark background for footer */
-    color: #fff; /* White text color */
-    padding: 15px 0; /* Add vertical spacing */
-    text-align: center; /* Center-align text */
+    background-color: #222;
+    /* Dark background for footer */
+    color: #fff;
+    /* White text color */
+    padding: 15px 0;
+    /* Add vertical spacing */
+    text-align: center;
+    /* Center-align text */
 }
 
 .footer a {
-    color: #007bff; /* Blue color for link */
-    text-decoration: none; /* Remove underline from link */
+    color: #007bff;
+    /* Blue color for link */
+    text-decoration: none;
+    /* Remove underline from link */
 }
 
 .footer a:hover {
-    text-decoration: underline; /* Add underline on hover */
+    text-decoration: underline;
+    /* Add underline on hover */
 }
 
 .menu-item-card-layout-list {
@@ -241,6 +307,28 @@ button:hover {
     flex: 200px;
 }
 
+#store-select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#store-select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.store-selector-label {
+    font-family: ;
+}
+
+
 ul li {
     list-style-type: none;
 }
@@ -249,4 +337,3 @@ a {
     text-decoration: none;
     color: #FAFAFA
 }
-
