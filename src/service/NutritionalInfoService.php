@@ -67,7 +67,10 @@ class NutritionalInfoService
 
                     // Add the nutritional values of the selected ingredient to the summary
                     foreach ($results[$ingredient_id] as $key => $value) {
-                        $summary['total'][$key] += $value * $multiplier;
+
+                        //exclude sodium from calorie count
+                        if ($key !== 'sodium') {
+                            $summary['total'][$key] += $value * $multiplier;
                     }
                 }
             }
