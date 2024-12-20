@@ -1,12 +1,20 @@
 const storeInSessionStorage = (key, val) => {
-    sessionStorage.setItem(key, val)
+    sessionStorage.setItem(key, JSON.stringify(val))
 }
 
-let store = document.querySelector('#store-select').value
-
 document.querySelector('#store-select').addEventListener('change', (e) => {
-    store = e.target.value
-    storeInSessionStorage('store', store)
+    console.log('In change')
+    const newStore = {
+        location: e.target.value,
+        selectedIndex: e.target.selectedIndex
+    }
+    storeInSessionStorage('store', newStore)
 })
 
-storeInSessionStorage('store', store)
+document.addEventListener('DOMContentLoaded', () => {
+    const savedSelection = sessionStorage.getItem('store')
+    if (savedSelection) {
+        const retrievedSelection = JSON.parse(savedSelection)
+        document.querySelector('#store-select').selectedIndex = retrievedSelection.selectedIndex
+    }
+})

@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const params = new URLSearchParams(window.location.search)
-    const store = sessionStorage.getItem('store')
+    const storeSelection = sessionStorage.getItem('store')
+    const location = JSON.parse(storeSelection).location
 
-    const response = await fetch(`/calculator/menu/${params.get('item_id')}/ingredients?location=${store}`)
+    const response = await fetch(`/calculator/menu/${params.get('item_id')}/ingredients?location=${location}`)
     const data = await response.json()
 
     const category = data.category
