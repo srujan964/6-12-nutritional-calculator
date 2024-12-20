@@ -33,7 +33,6 @@ class NutritionalInfoService
             'Large' => 1.5
         ];
 
-        $multiplier = $sizes[$item['size']];
 
         foreach ($menuSelections as $menu_item) {
             $summary = [
@@ -59,6 +58,8 @@ class NutritionalInfoService
                     'iron' => 0
                 ]
             ];
+
+            $multiplier = $sizes[$menu_item['size']];
 
             foreach ($menu_item['ingredient_selections'] as $ingredient_selection) {
                 if ($ingredient_selection['is_selected']) {

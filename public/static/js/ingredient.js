@@ -26,6 +26,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         clone.querySelector('.size-selector-radio').value = size
         clone.querySelector('.size-selector-radio').name = 'size'
 
+        if (size === sizes[category][0]) {
+            clone.querySelector('.size-selector-radio').checked = true
+        }
+
         clone.querySelector('.size-selector-radio-label').for = size
         clone.querySelector('.size-selector-radio-label').textContent = size
         document.querySelector('.size-selector-fieldset').append(clone)
