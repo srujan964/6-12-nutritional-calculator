@@ -16,5 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savedSelection) {
         const retrievedSelection = JSON.parse(savedSelection)
         document.querySelector('#store-select').selectedIndex = retrievedSelection.selectedIndex
+    } else {
+        const storeSelector = document.querySelector('#store-select')
+        const store = {
+            location: storeSelector.value,
+            selectedIndex: storeSelector.selectedIndex
+        }
+        storeInSessionStorage('store', store)
     }
 })
