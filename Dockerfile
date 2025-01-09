@@ -3,7 +3,7 @@ FROM composer:2.8.3 AS composer
 FROM php:8.3-alpine
 
 #Install required system dependencies
-RUN apk add zip curl 
+RUN apk add zip
 
 #set working directory
 WORKDIR /var/www
